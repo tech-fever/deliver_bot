@@ -24,8 +24,8 @@ pre_check() {
 }
 
 install_base() {
-    (command -v git >/dev/null 2>&1 && command -v curl >/dev/null 2>&1 && command -v wget >/dev/null 2>&1 && command -v unzip >/dev/null 2>&1 && command -v getenforce >/dev/null 2>&1) ||
-        (install_soft curl wget git unzip python3-pip)
+    (command -v git >/dev/null 2>&1 && command -v curl >/dev/null 2>&1 && command -v wget >/dev/null 2>&1 && command -v pip >/dev/null 2>&1 && command -v getenforce >/dev/null 2>&1) ||
+        (install_soft curl wget git python3-pip)
 }
 
 install_soft() {
