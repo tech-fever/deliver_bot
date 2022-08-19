@@ -1,0 +1,12 @@
+[Unit]
+Description=telegram deliver bot
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/deliver_bot
+ExecStart=/usr/bin/python3 main.py
+Restart=always
