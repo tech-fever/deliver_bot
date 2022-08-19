@@ -45,11 +45,12 @@ install() {
 
     echo -e "> 安装Deliver Bot"
 
-    mkdir -p $BOT_BASE_PATH/data && cd $BOT_BASE_PATH
+    mkdir -p $BOT_BASE_PATH && cd $BOT_BASE_PATH
     chmod 777 -R $BOT_BASE_PATH
 
     echo -e "正在下载"
     git clone $BOT_GIT_URL .
+    mkdir data
     if [[ $? != 0 ]]; then
         echo -e "${red}下载失败，请检查本机能否连接 GITHUB${plain}"
         return 0
@@ -76,6 +77,7 @@ uninstall() {
     echo -e "> 卸载Deliver Bot"
     systemctl stop bot.service
     systemctl disable bot.service
+    rm /etc/systemd/system/bot.service
     rm -rf $BOT_BASE_PATH
     echo -e "> 卸载完成"
 }
