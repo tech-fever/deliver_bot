@@ -49,7 +49,7 @@ install() {
     chmod 777 -R $BOT_BASE_PATH
 
     echo -e "正在下载"
-    git clone $BOT_GIT_URL ./
+    git clone $BOT_GIT_URL .
     if [[ $? != 0 ]]; then
         echo -e "${red}下载失败，请检查本机能否连接 GITHUB${plain}"
         return 0
